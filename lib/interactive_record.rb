@@ -57,5 +57,5 @@ class InteractiveRecord
     DB[:conn].results_as_hash = true
     student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ? OR grade = ?", name, grade)
   end
-  binding.pry
+  
 end
