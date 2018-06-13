@@ -56,7 +56,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     property = attribute if name.is_a? == String
     property = attribute if attribute.is_a? == Integer
-    student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{attribute} = ?", attribute)
+    student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{property} = ?", attribute)
   end
 
 end
