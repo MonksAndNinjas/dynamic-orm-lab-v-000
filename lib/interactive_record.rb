@@ -55,7 +55,7 @@ class InteractiveRecord
 
   def self.find_by(name:, grade:)
     
-    
+
   end
 
 end
