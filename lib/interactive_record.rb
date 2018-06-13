@@ -54,7 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(name:, grade:)
-    DB[:conn].results_as_hash = true
+  #  DB[:conn].results_as_hash = true
     student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ? AND grade = ?", name: name, grade: grade)
   end
 
