@@ -53,9 +53,10 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(name: nil, grade: nil)
-    DB[:conn].results_as_hash = true
+  def self.find_by(attributes_hash)
+    raw_value = attribute_hash.values.first
+    value = value.class == Fixnum ? value : "'#{raw_value}'"
     student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ? OR grade = ?", name, grade)
   end
-  
+
 end
