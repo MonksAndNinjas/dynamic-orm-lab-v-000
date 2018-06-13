@@ -57,7 +57,7 @@ class InteractiveRecord
     raw_value = attribute_hash.values.first
     value = raw_value.class == Fixnum ? raw_value : "'#{raw_value}'"
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{value}"
-    
+    DB[:conn].execute(sql)
   end
 
 end
