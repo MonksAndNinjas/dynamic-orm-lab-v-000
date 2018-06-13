@@ -54,8 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute)
-    property = name if attribute.is_a?(String)
-    property = grade if attribute.is_a?(Integer)
+    DB[:conn].results_as_hash = true
     student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{property}' = ?", attribute)
   end
 
