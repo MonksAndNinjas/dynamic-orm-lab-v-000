@@ -53,7 +53,8 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(name)
+  def self.find_by(name:, grade:)
+    
     
   end
 
