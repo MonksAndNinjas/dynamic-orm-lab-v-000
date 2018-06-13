@@ -56,7 +56,7 @@ class InteractiveRecord
   def self.find_by(attributes_hash)
     raw_value = attribute_hash.values.first
     value = raw_value.class == Fixnum ? raw_value : "'#{raw_value}'"
-    student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ? OR grade = ?", name, grade)
+    student = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{value}"
   end
 
 end
